@@ -4,8 +4,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="bg-green-100">
-      Hello World!!
+    <div className="bg-red-100">
+      سلام بر شما!!
     </div>
   )
 }
