@@ -4,7 +4,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <div className="bg-green-100">
       Hello World!!
     </div>
   )
