@@ -1,12 +1,12 @@
 // import { useState } from 'react'
-
+import { Layout } from "./components/layout/index"
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <div className="bg-red-100">
-      سلام بر شما!!
-    </div>
+    <Layout>
+      <div>Hello!</div>
+    </Layout>
   )
 }
 
