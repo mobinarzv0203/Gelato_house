@@ -5,6 +5,23 @@ export const Header: React.FC = () => {
     <header>
       <Button
         variant="contained"
+        color="secondary"
+        onClick={() => {
+          console.log("Hi There!");
+        }}
+      >
+        ورود
+      </Button>
+      <Button
+        variant="outlined"
+        onClick={() => {
+          console.log("Hi There!");
+        }}
+      >
+        ورود
+      </Button>
+      <Button
+        variant="text"
         onClick={() => {
           console.log("Hi There!");
         }}

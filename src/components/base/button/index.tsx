@@ -8,10 +8,22 @@ type ButtonProps = {
   size?: "small" | "medium" | "large";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const colors = { 
-  primary: "bg-primary-500 text-white", 
-  secondary: "bg-secondary-500 text-white" 
-};
+const buttonBaseStyle = "rounded-xl";
+
+const variants = {
+  contained: {
+    primary: "bg-primary-500 text-white", 
+    secondary: "bg-secondary-500 text-white"
+  },
+  outlined: {
+    primary: "text-primary-500 border border-primary-500", 
+    secondary: "text-secondary-500 border border-secondary-500"
+  },
+  text: {
+    primary: "text-gray-950", 
+    secondary: "text-gray-950"
+  }
+}
 
 const sizes = {
   small: "px-2 py-1 text-sm", 
@@ -25,21 +37,15 @@ export const Button: React.FC<ButtonProps> = ({
   size = "medium",
   ...props
 }): JSX.Element => {
-  switch (variant) {
-    case "contained":
-      return (
-        <button
-          className={clx("p-2 rounded-3xl", colors[color], sizes[size])}
+  return(
+    <button
+          className={clx(
+            buttonBaseStyle, 
+            variants[variant][color], 
+            sizes[size])}
           {...props}
         >
           {children}
         </button>
-      );
-    case "outlined":
-      return <button {...props}>outlined</button>;
-    case "text":
-      return <button {...props}>text</button>;
-    default:
-      return <button {...props}>outlined</button>;
-  }
+  )
 };
