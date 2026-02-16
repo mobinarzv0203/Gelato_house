@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
           console.log("Hi There!");
         }}
       >
-        Site Header
+        ورود
       </Button>
     </header>
   );
