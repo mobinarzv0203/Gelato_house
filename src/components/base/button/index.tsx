@@ -1,45 +1,24 @@
+import type React from "react";
 import type { JSX } from "react";
 
 type ButtonProps = {
   variant?: "contained" | "outlined" | "text";
-} & React.PropsWithChildren;
+} & React.PropsWithChildren &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 //hashtable
 const ButtonDesign = {
-  contained: () => (
-    <button
-      style={{
-        backgroundColor: "blue",
-        color: "white",
-      }}
-    >
-      contained
+  contained: ({ children, ...rest }) => (
+    <button className="p-2 rounded-3xl bg-red-200" {...rest}>
+      {children}
     </button>
   ),
-  outlined: () => (
-    <button
-      style={{
-        border: "2px solid blue",
-        color: "blue",
-        backgroundColor: "transparent",
-      }}
-    >
-      outlined
-    </button>
-  ),
-  text: () => (
-    <button
-      style={{
-        backgroundColor: "transparent",
-        color: "blue",
-      }}
-    >
-      text
-    </button>
-  ),
+  outlined: (props) => <button {...props}>outlined</button>,
+  text: (props) => <button {...props}>text</button>,
 };
 export const Button: React.FC<ButtonProps> = ({
-  variant = "outlined",
+  variant = "contained",
+  ...props
 }): JSX.Element => {
-  return ButtonDesign[variant]();
+  return ButtonDesign[variant](props);
 };
