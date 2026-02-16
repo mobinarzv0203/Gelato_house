@@ -20,8 +20,8 @@ const variants = {
     secondary: "text-secondary-500 border border-secondary-500"
   },
   text: {
-    primary: "text-gray-950", 
-    secondary: "text-gray-950"
+    primary: "text-gray-500", 
+    secondary: "text-gray-500"
   }
 }
 
