@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { Layout } from "./components/layout/index"
+import { Layout } from "./components/layout/index";
 function App() {
   // const [count, setCount] = useState(0)
 
@@ -7,7 +7,7 @@ function App() {
     <Layout>
       <div>Hello!</div>
     </Layout>
-  )
+  );
 }
 
-export default App
+export default App;
