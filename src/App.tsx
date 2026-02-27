@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import { Layout } from "./components/layout/index";
-import HomePage from "./components/pages/home";
+import { HomePage } from "./components/pages/home";
 function App() {
   // const [count, setCount] = useState(0)
 
